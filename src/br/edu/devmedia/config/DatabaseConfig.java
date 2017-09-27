@@ -2,7 +2,6 @@ package br.edu.devmedia.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class DatabaseConfig {
 	
@@ -19,9 +18,10 @@ public class DatabaseConfig {
 		
 	}
 	
-	public Connection getConnection() throws SQLException {
+	public Connection getConnection() throws Exception {
 		
-			return DriverManager.getConnection("jdbc:mysql://localhost:3306/loja", "root", "mysql");
+		Class.forName("com.mysql.jdbc.Driver");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/loja", "root", "mysql");
 		
 	}
 	
@@ -31,7 +31,7 @@ public class DatabaseConfig {
 			
 			System.out.println(DatabaseConfig.getInstance().getConnection() );
 			
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			
 			e.printStackTrace();
 			

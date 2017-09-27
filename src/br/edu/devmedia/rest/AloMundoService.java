@@ -16,7 +16,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 
-@Path("/")
+@Path("/alo")
 public class AloMundoService {
 	
 	@GET
@@ -40,9 +40,9 @@ public class AloMundoService {
 	@Path("/param/{msg}")
 	@Produces(MediaType.TEXT_HTML)
 	@Consumes(MediaType.TEXT_PLAIN)
-	public String textParam(@PathParam("msg") String msg) {
+	public String testParam(@PathParam("msg") String msg) {
 		
-		return "<h1>Alô, parâmetro: " + msg + "!</h1>";
+		return "<h1>Param: " + msg + "!</h1>";
 		
 	}
 	
