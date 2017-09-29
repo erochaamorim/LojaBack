@@ -1,10 +1,10 @@
 package br.edu.devmedia.rest;
 
 import javax.annotation.PostConstruct;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import br.edu.devmedia.dao.UsuarioDAO;
@@ -24,7 +24,7 @@ public class UsuarioService {
 	@POST
 	@Path("/login")
 	@Produces(MediaType.TEXT_PLAIN)
-	public boolean isLoggedIn(@QueryParam("login") String login, @QueryParam("senha") String senha) {
+	public boolean isLoggedIn(@FormParam("login") String login, @FormParam("senha") String senha) {
 		
 		try {
 			
