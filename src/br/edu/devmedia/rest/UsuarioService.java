@@ -1,6 +1,7 @@
 package br.edu.devmedia.rest;
 
 import javax.annotation.PostConstruct;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -8,6 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.edu.devmedia.dao.UsuarioDAO;
+import br.edu.devmedia.entity.User;
 
 @Path("/user")
 public class UsuarioService {
@@ -39,4 +41,14 @@ public class UsuarioService {
 		
 	}
 	
+	@POST
+	@Path("/add")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.APPLICATION_JSON)
+	public User add(User user) {
+		
+		return user;
+		
+	}
+
 }
