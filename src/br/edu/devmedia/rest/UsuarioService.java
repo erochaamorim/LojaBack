@@ -1,14 +1,19 @@
 package br.edu.devmedia.rest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import br.edu.devmedia.dao.UsuarioDAO;
+import br.edu.devmedia.entity.Profissao;
 import br.edu.devmedia.entity.User;
 
 @Path("/user")
@@ -48,6 +53,32 @@ public class UsuarioService {
 	public User add(User user) {
 		
 		return user;
+		
+	}
+	
+	@GET
+	@Path("/profissoes")	
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Profissao> listProfissoes() {
+		
+		List<Profissao> profissoes = new ArrayList<Profissao>();
+		
+		Profissao profissao = new Profissao();
+		profissao.setCod(1);
+		profissao.setDescricao("Professor");
+		profissoes.add(profissao);
+		
+		Profissao profissao1 = new Profissao();
+		profissao1.setCod(2);
+		profissao1.setDescricao("Cientista");
+		profissoes.add(profissao1);
+		
+		Profissao profissao2 = new Profissao();
+		profissao2.setCod(3);
+		profissao2.setDescricao("Psicólogo");
+		profissoes.add(profissao2);
+		
+		return profissoes;
 		
 	}
 
