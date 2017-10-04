@@ -66,16 +66,22 @@ public class UsuarioService {
 		Profissao profissao = new Profissao();
 		profissao.setCod(1);
 		profissao.setDescricao("Professor");
+		profissao.setSubDescricao("Filosofia");
+		profissao.setUrlImg("img/student.png");
 		profissoes.add(profissao);
 		
 		Profissao profissao1 = new Profissao();
 		profissao1.setCod(2);
 		profissao1.setDescricao("Cientista");
+		profissao1.setSubDescricao("Neurologia");
+		profissao1.setUrlImg("img/brain.png");
 		profissoes.add(profissao1);
 		
 		Profissao profissao2 = new Profissao();
 		profissao2.setCod(3);
 		profissao2.setDescricao("Psicólogo");
+		profissao2.setSubDescricao("Análise do Comportamento");
+		profissao2.setUrlImg("img/doctor.png");
 		profissoes.add(profissao2);
 		
 		return profissoes;
