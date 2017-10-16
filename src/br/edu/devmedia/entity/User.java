@@ -11,7 +11,7 @@ public class User {
     protected String email;
     protected String miniBio;
     protected char sexo;
-    protected int codProfissao;
+    protected Profissao profissao;
 
     public int getId() {
         return id;
@@ -53,12 +53,12 @@ public class User {
         this.sexo = sexo;
     }
 
-    public int getCodProfissao() {
-        return codProfissao;
+    public Profissao getProfissao() {
+        return profissao;
     }
 
-    public void setCodProfissao(int profissao) {
-        this.codProfissao = profissao;
+    public void setProfissao(Profissao profissao) {
+        this.profissao = profissao;
     }
 
 }
