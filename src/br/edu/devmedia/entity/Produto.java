@@ -8,8 +8,12 @@ public class Produto {
 	protected String urlImg, titulo, descricao;
 	protected BigDecimal valor;
 	
+	public Produto() {
+		
+	}
+	
 	public Produto(int id, String urlImg, String titulo, String descricao, BigDecimal valor) {
-		super();
+		
 		this.id = id;
 		this.urlImg = urlImg;
 		this.titulo = titulo;
