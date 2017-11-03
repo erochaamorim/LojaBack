@@ -25,7 +25,7 @@ public class UsuarioDAO {
 	public boolean inserirToken(String login, String token) throws Exception {
 		
 		Connection conexao = DatabaseConfig.getInstance().getConnection();		
-		String sql = "UPDATE usuario SET fcm_token = ? WHEN login = ?";
+		String sql = "UPDATE usuario SET fcm_token = ? WHERE login = ?";
 		PreparedStatement statement = conexao.prepareStatement(sql);
 		statement.setString(1, token);
 		statement.setString(2, login);
