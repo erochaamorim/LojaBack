@@ -31,6 +31,7 @@ public class Post2FCM {
 		content.addData("message", "Mensagem teste.");
 		content.addData("data", simpleDateFormat.format(new Date() ) );
 		content.addData("id", "2");
+		content.addData("imgUrl", "https://d30y9cdsu7xlg0.cloudfront.net/png/1199198-200.png");
 		return content;
 		
 	}
@@ -39,24 +40,23 @@ public class Post2FCM {
 		
 		try (FcmClient client = new FcmClient(PropertiesBasedSettings.createFromDefault())) {
 
-            // Message Options:
             FcmMessageOptions options = FcmMessageOptions.builder()
                     .setTimeToLive(Duration.ofHours(1))
                     .build();
 
-            //@todo Send a Message:         
             Map<String, String> data = content.getData();
             List<String> regIds = content.getRegIds();
             String to = regIds.get(0);
             DataUnicastMessage notification = new DataUnicastMessage(options, to, data);
             client.send(notification);
+            return true;
             
         } catch(Exception e) {
         	
         	e.printStackTrace();
+        	return false;
         	
-        }
-		return false;
+        }		
 		
 	}
 
