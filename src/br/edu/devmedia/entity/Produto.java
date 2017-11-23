@@ -1,13 +1,31 @@
 package br.edu.devmedia.entity;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class Produto {
 
 	protected int id;
-	protected String urlImg, titulo, descricao;
+	protected String urlImg, titulo, descricao, sku;
 	protected BigDecimal valor;
+	protected List<Venda> vendas;
 	
+	public String getSku() {
+		return sku;
+	}
+
+	public void setSku(String sku) {
+		this.sku = sku;
+	}
+
+	public List<Venda> getVendas() {
+		return vendas;
+	}
+
+	public void setVendas(List<Venda> vendas) {
+		this.vendas = vendas;
+	}
+
 	public Produto() {
 		
 	}
